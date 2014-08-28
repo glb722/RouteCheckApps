@@ -1,0 +1,26 @@
+<form>
+	<div class="well col-md-2">
+		<%= label_tag("Select Day ") %></br>
+		<%= radio_button_tag(:day, "Sunday") %>
+		<%= label_tag("Sunday ") %></br>
+		
+		<%= radio_button_tag(:day, "Monday") %>
+		<%= label_tag("Monday-Thusday ") %></br>
+		
+		<%= radio_button_tag(:day, "Friday") %>
+		<%= label_tag("Friday ") %></br>
+
+		<%= label_tag("Select Route ") %></br>
+		<% for r in RouteSubType.all %>
+			<% if r.route_type_id == 2 %>
+				<%= check_box_tag "type[]", r.id %><%=r.name%></br></br>
+			<% end %>	
+			
+		<% end %>
+
+
+
+		
+		<%= submit_tag 'Submit', :class => "btn" %>
+	</div>
+</form>

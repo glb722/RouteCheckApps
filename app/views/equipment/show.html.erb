@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @equipment.name %>
+</p>
+
+<strong>Equipment Things To Check:</strong></br>
+  <% for r in @equipment.equipment_things_to_check %>
+  	<%= r.name %></br>
+  <% end %>
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipment_index_path %>

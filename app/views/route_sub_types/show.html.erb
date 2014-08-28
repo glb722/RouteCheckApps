@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @route_sub_type.name %>
+  <strong>Route ID:</strong>
+  <%= @route_sub_type.route_type.id %>
+  <strong>Route Things To Check:</strong>
+  <% for r in @route_sub_type.route_things_to_check %>
+  	<%= r.name %>
+  <% end %>
+
+</p>
+
+<%= link_to 'Edit', edit_route_sub_type_path(@route_sub_type) %> |
+<%= link_to 'Back', route_sub_types_path %>

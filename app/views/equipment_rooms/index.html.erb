@@ -1,0 +1,26 @@
+<h1>Listing equipment_rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipment_rooms.each do |equipment_room| %>
+      <tr>
+        <td><%= link_to 'Show', equipment_room %></td>
+        <td><%= link_to 'Edit', edit_equipment_room_path(equipment_room) %></td>
+        <td><%= link_to 'Destroy', equipment_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Equipment room', new_equipment_room_path %></br>
+<%= link_to 'Back to Admin', welcome_admin_path %>

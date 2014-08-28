@@ -1,0 +1,16 @@
+
+<form>
+		<div class="well col-md-2">
+
+				<% for r in Route.all %>
+					<% if r.route_type_id == session[:route_type_id] %>
+						<%= radio_button_tag(:route, r.id) %><%=r.name%></br></br>
+					<% end %>	
+				
+				<% end %>
+
+				
+			
+			<%= submit_tag 'Submit', :class => "btn" %>
+		</div>
+	</form>

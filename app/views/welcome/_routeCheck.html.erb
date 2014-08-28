@@ -1,0 +1,22 @@
+<div>
+	<% if @routeDay == "Sunday" %>
+		<div style="padding-top:10px">
+			<%= render "sundayRoute" %>
+		</div>
+	<% elsif @routeDay == "Friday" %>
+		<div style="padding-top:10px">
+			<%= render "fridayRoute" %>
+		</div>
+	<% elsif @routeDay == "Monday" %>
+		<div style="padding-top:10px">
+			<%= render "regularRoute" %>
+		</div>
+	<% else %>
+		<div style="padding-top:10px">
+			<%= render "checkRouteDay" %>
+		</div>
+	<% end %>
+
+
+	
+</div>

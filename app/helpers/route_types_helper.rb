@@ -1,0 +1,2 @@
+module RouteTypesHelper
+end

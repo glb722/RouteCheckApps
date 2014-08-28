@@ -1,0 +1,38 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :building %><br>
+    <%= f.text_field :building %>
+  </div>
+  <div class="field">
+    <%= f.label :roomnumber %><br>
+    <%= f.text_field :roomnumber %></br>
+
+    <%= f.label :route_name %><br>
+    <%= select_tag 'route_name', options_from_collection_for_select(Route.all, :id, :name, select()) %></br>
+
+    <%= f.label 'Select Equipment' %><br>
+    <% for r in Equipment.all %>
+      <%= check_box_tag "equipment[]", r.id, check(r.id) %><%=r.name%></br></br>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

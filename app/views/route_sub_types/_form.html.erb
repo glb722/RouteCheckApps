@@ -1,0 +1,36 @@
+<%= form_for(@route_sub_type) do |f| %>
+  <% if @route_sub_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@route_sub_type.errors.count, "error") %> prohibited this route_sub_type from being saved:</h2>
+
+      <ul>
+      <% @route_sub_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :route_type %><br>
+    <%= select_tag 'route_type', options_from_collection_for_select(RouteType.all, :id, :name, select()) %></br>
+    <%= f.label 'Select Route Things To Check' %><br>
+    <% for r in RouteThingsToCheck.all %>
+      <%= check_box_tag "routeThingsToCheck[]", r.id, checkRoute(r.id) %><%=r.name%></br>
+    <% end %>
+    <%= f.label 'Select Equipment Things To Check' %><br>
+    <% for r in EquipmentThingsToCheck.all %>
+      <%= check_box_tag "equipmentThingsToCheck[]", r.id, checkEquipment(r.id) %><%=r.name%></br>
+    <% end %>
+    
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+

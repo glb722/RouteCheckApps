@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Route Check Application</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body style="background-color:gray; padding-top:60px">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top:0px; background-color:#4F2684; border-top:3px solid black">
+
+	       <div class="container-fluid" >
+
+            <div class="navbar-header" style="float:center; text-align:center; padding-top:10px">	
+            	
+      		    <a class="navbar-brand" style="float:center; color:white">iTAC Route Check Application</a>
+              
+              <a type="button" class="settings" href="/welcome/admin" style="float: right; background:none, border:none; padding-right:20px; cursor:pointer; color:white;">Settings</a>
+
+            </div>
+            
+	       </div>
+      </nav>
+
+<%= yield %>
+
+</body>
+<!--<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    iTAC
+  </div>
+</nav>-->
+
+</html>

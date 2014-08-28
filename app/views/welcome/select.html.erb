@@ -1,0 +1,16 @@
+
+	<form>
+		<div class="well col-md-2">
+			
+				<% for r in RouteSubType.where(:route_type_id => session[:route_type_id]) %>
+						<%= radio_button_tag(:typeIn, r.id) %><%=r.name%></br></br>
+				<% end %>
+	
+			
+			<%= submit_tag 'Submit', :class => "btn" %>
+		</div>
+	</form>
+
+
+
+	

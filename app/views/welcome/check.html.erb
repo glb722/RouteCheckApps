@@ -1,0 +1,51 @@
+<form>
+		<div class="well col-md-2">
+
+				<% for r in Room.all %>
+					<% if r.route_id == session[:routeId] %>
+						<!--<%= radio_button_tag(:room, r.id) %><%=r.name%></br></br>-->
+						<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#<%= r.id %>">
+						  <%=r.name%>
+						</button></br></br>
+						<!-- Modal -->
+						<div class="modal fade" id="<%= r.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						        <h4 class="modal-title" id="myModalLabel"><%=r.name%></h4>
+						      </div>
+						      <div class="modal-body">
+						        <% for s in @route_sub_type.route_things_to_check %>
+								  <%= check_box_tag "routeThingsChecked[]", s.id %><%= s.name %></br>
+
+								<% end %>
+								<% for s in r.equipment %>
+
+								  <%= s.name %></br>
+								  	<% for q in s.equipment_things_to_check %>
+								  		<% if @route_sub_type.equipment_things_to_check.include?(q) %>
+								  			&nbsp&nbsp&nbsp<%= check_box_tag "equipmentThingsToCheckChecked[]", q.id %><%= q.name %></br>
+								  		<% end %>
+								  	<% end %>
+								<% end %>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					<% end %>	
+				
+				<% end %>
+
+				
+			
+			<%= submit_tag 'Submit', :class => "btn" %>
+		</div>
+	</form>
+
+
+

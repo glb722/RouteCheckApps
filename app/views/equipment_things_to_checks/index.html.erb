@@ -1,0 +1,28 @@
+<h1>Listing Equipment Things To Check</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipment_things_to_checks.each do |equipment_things_to_check| %>
+      <tr>
+        <td><%= equipment_things_to_check.name %></td>
+        <td><%= link_to 'Show', equipment_things_to_check %></td>
+        <td><%= link_to 'Edit', edit_equipment_things_to_check_path(equipment_things_to_check) %></td>
+        <td><%= link_to 'Destroy', equipment_things_to_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Equipment things to check', new_equipment_things_to_check_path %></br>
+<%= link_to 'Back to Admin', welcome_admin_path %>

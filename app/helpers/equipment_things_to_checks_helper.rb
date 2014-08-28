@@ -1,0 +1,2 @@
+module EquipmentThingsToChecksHelper
+end

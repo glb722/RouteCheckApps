@@ -1,0 +1,28 @@
+<h1>Listing Route Sub Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @route_sub_types.each do |route_sub_type| %>
+      <tr>
+        <td><%= route_sub_type.name %></td>
+        <td><%= link_to 'Show', route_sub_type %></td>
+        <td><%= link_to 'Edit', edit_route_sub_type_path(route_sub_type) %></td>
+        <td><%= link_to 'Destroy', route_sub_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Route sub type', new_route_sub_type_path %></br>
+<%= link_to 'Back to Admin', welcome_admin_path %>

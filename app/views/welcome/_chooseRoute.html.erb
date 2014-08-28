@@ -1,0 +1,12 @@
+<form>
+	<div class="well col-md-2">
+		<%= session[:dayOfTheWeek] %>
+		<% for r in RouteType.all %>
+			<%= radio_button_tag(:routeTypeId, r.id) %><%=r.name%></br></br>
+			
+		<% end %>
+		
+		
+		<%= submit_tag 'Submit', :class => "btn" %>
+	</div>
+</form>

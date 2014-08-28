@@ -1,0 +1,18 @@
+<div >
+	<% if @dailyType == "IC" %>
+		<div style="padding-top:10px">
+			<%= render "ic" %>
+		</div>
+	<% elsif @dailyType == "UC" %>
+		<div style="padding-top:10px">
+			<%= render "uc" %>
+		</div>
+	<% else %>
+		<div style="padding-top:10px">
+			<%= render "checkDailyType" %>
+		</div>
+	<% end %>
+
+
+	
+</div>	
